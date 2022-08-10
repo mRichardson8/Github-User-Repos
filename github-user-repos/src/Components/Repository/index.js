@@ -9,13 +9,13 @@ const Repository = ({repoData}) => {
     const container = useRef(null)
 
 
-    const calcFields = () => {
-        let number = 0
-        if (repoData.description){
-            number++;
-        }
-        return number
-    }
+    // const calcFields = () => {
+    //     let number = 0
+    //     if (repoData.description){
+    //         number++;
+    //     }
+    //     return number
+    // }
 
     const handleClick = () => {
         container.current.style.maxHeight = clicked ? "50px" : `500px`;
