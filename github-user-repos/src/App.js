@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useRef} from 'react'
 import axios from 'axios'
 import env from "react-dotenv";
 import { Repository } from './Components';
@@ -8,12 +8,14 @@ function App() {
   const [username, setUsername] = useState('')
   const [gitData, setGitData] = useState()
   const [error, setError] = useState(false)
+  const gifDiv = useRef(null)
   const handleChange = (e) => {
     setUsername(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    gifDiv.current.style.display = 'none'
     makeRequest()
   }
 
@@ -52,16 +54,28 @@ function App() {
       </div>
       <div className="data-cont">
         {gitData ? <>
-          <section>
-            <p>You have {gitData.length} Repos</p>
+        <section className="user-details">
+          
+          <img src={gitData[0].owner.avatar_url} alt="User avatar" className="profile"></img>
+          <h1>{gitData[0].owner.login}</h1>
+          <p>You have {gitData.length} Repos</p>
+        </section>
+          <section className="repo-list">
             <ul>
           {gitData.map(repo => <Repository repoData = {repo}/>
           )}
           </ul>
             </section>
+
         </> : null}
+        
         {error ? <p>Error, {username} is not a valid GitHub user</p> : null}
       </div>
+
+      <div id='start-gif' ref={gifDiv}>
+        <h1>Welcome to the GitHub Repo-Radar 🛰️</h1>
+          <img id='radio-gif' src="radar_principle.gif" alt="radar gif" />
+        </div>
     </div>
   );
 }

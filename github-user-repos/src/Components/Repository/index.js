@@ -17,8 +17,11 @@ const Repository = ({repoData}) => {
     //     return number
     // }
 
-    const handleClick = () => {
-        container.current.style.maxHeight = clicked ? "50px" : `500px`;
+    const handleClick = (e) => {
+        if (e.target.className === 'repo-link'){
+            return;
+        }
+        container.current.style.maxHeight = clicked ? "50px" : '500px';
         setClicked(prevClick => !prevClick)
     }
 
@@ -26,7 +29,7 @@ const Repository = ({repoData}) => {
 
     return (
         <div className='repo-container' ref={container} onClick={handleClick}>
-            <p>{repoData.name}</p>
+            <p><a className='repo-link' href={repoData.html_url}>{repoData.name}</a></p>
             <p>{repoData.description}</p>
             <p>Created at: {repoData.created_at}</p>
             <p>Last Updated: {repoData.updated_at}</p>

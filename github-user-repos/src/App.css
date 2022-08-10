@@ -25,17 +25,31 @@ div.Header i{
   font-size: 2rem;
   color: white;
   margin-left: 2.5rem;
+  cursor: pointer;
 }
 
 div.Header input{
   margin-right: 0;
 }
 
-div.data-cont section{
+div.data-cont {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+div.data-cont section.user-details{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 30%
+}
+
+
+div.data-cont section.repo-list{
+  display: flex;
+  flex-direction: column;
+  width:60%;
 }
 
 div.repo-container{
@@ -44,7 +58,7 @@ div.repo-container{
   border: 1px solid #24292f;
   box-sizing: border-box;
   /* box-shadow: 2px 2px grey; */
-  width: 350px;
+  width: 80%;
   border-radius: 12px;
   max-height: 50px;
   transition: max-height 1s;
@@ -58,11 +72,37 @@ div.repo-container :first-child{
   color: #0969da;
   font-weight:600;
   font-size: 1.1rem;
-  margin-top: 0.7rem;
+  margin-top: 1rem;
 
 }
 
-div.repo-container *{
+div.repo-container > *{
   margin-left: 1rem;
+  word-wrap: break-word;
 
+}
+
+div.repo-container a{
+  text-decoration: none;
+}
+
+img.profile{
+  width:75%;
+  margin: 2rem 2rem 0 2rem;
+}
+
+div#start-gif{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+img#radio-gif{
+  
+  z-index: 0;
+  width: 60%;
+  left: 20%;
+  top: 5%;
 }
