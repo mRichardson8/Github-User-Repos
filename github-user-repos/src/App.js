@@ -33,7 +33,7 @@ function App() {
   const makeRequest = async () => {
         try{
           setGitData(null)
-          const { data } = await axios.get(`https://api.github.com/users/${username}/repos`, {headers: {"Authorization" : window.env.API_KEY}})
+          const { data } = await axios.get(`https://api.github.com/users/${username}/repos`, {headers: {"Authorization" : env.API_KEY}})
           setGitData(data)
         }catch(err){
           console.log("big error", err.message)

@@ -20,6 +20,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "react-dotenv": {
+    "whitelist": [
+      "API_KEY"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -40,7 +40,7 @@ window.env = {
   "MSYSTEM_CHOST": "x86_64-w64-mingw32",
   "MSYSTEM_PREFIX": "C:/Program Files/Git/mingw64",
   "NODE": "C:\\Program Files\\nodejs\\node.exe",
-  "npm_command": "run-script",
+  "npm_command": "start",
   "npm_config_cache": "C:\\Users\\mattr\\AppData\\Local\\npm-cache",
   "npm_config_globalconfig": "C:\\Users\\mattr\\AppData\\Roaming\\npm\\etc\\npmrc",
   "npm_config_global_prefix": "C:\\Users\\mattr\\AppData\\Roaming\\npm",
