@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useRef } from "react";
+import { SearchPage } from "./Components";
 
 function App() {
+  const gifDiv = useRef(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchPage gifDiv={gifDiv} />
+      <div id="start-gif" ref={gifDiv}>
+        <h1>Welcome to the GitHub Repo-Radar 🛰️</h1>
+        <img id="radio-gif" src="radar_principle.gif" alt="radar gif" />
+      </div>
     </div>
   );
 }
